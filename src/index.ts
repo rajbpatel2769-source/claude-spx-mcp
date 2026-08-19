@@ -53,10 +53,11 @@ function createServer(env: Env) {
 
 export default {
   fetch(request: Request, env: Env, ctx: ExecutionContext) {
-    const server = createServer(env);
-
-    return createMcpHandler(server, {
-      route: "/mcp",
-    })(request, env, ctx);
+    return createMcpHandler(
+      () => createServer(env),
+      {
+        route: "/mcp",
+      }
+    )(request, env, ctx);
   },
 };
