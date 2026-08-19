@@ -1,5 +1,5 @@
-import { McpServer } from "@modelcontextprotocol/server/mcp.js";
-import { createMcpHandler } from "agents/mcp";
+import { McpServer } from "@modelcontextprotocol/server";
+import { createMcpHandler } from "agents/mcp/server";
 import { z } from "zod";
 
 interface Env {
